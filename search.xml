@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Python Study Note 1]]></title>
+    <url>%2F2018%2F01%2F19%2FPython-Study-Note-1%2F</url>
+    <content type="text"><![CDATA[An example of using Python standard library &amp; pandas 123456789101112import jsonfrom collections import defaultdict#count the appearance of time zonedef get_counts2(sequence): counts = defaultdict(int) # values will initialize to 0 for x in sequence: counts[x] += 1return countspath = &apos;ch02/usagov_bitly_data2012-03-16-1331923249.txt&apos;records = [json.loads(line) for line in open(path)] List Comprehension: a concise way of applying an operation (like json.loads) to a collection of strings or other objects. Counting Time Zones with Python standard library1234567In [19]: records[0]Out[19]: u&apos;America/New_YorkIn [31]: counts = get_counts(time_zones)In [32]: counts[&apos;America/New_York&apos;]Out[32]: 1251In [33]: len(time_zones)Out[33]: 3440 1234def top_counts(count_dict, n=10): value_key_pairs = [(count, tz) for tz, count in count_dict.items()] value_key_pairs.sort() return value_key_pairs[-n:] 12In [35]: top_counts(counts)Out[35]: [(33, u&apos;America/Sao_Paulo&apos;), (35, u&apos;Europe/Madrid&apos;), (36, u&apos;Pacific/Honolulu&apos;), (37, u&apos;Asia/Tokyo&apos;), (74, u&apos;Europe/London&apos;), (191, u&apos;America/Denver&apos;), (382, u&apos;America/Los_Angeles&apos;), (400, u&apos;America/Chicago&apos;), (521, u&apos;&apos;), (1251, u&apos;America/New_York&apos;)] If you search the Python standard library, you may find the collections.Counter class, which makes this task a lot easier: 12 from collections import Counter counts = Counter(time_zones)counts.most_common(10) Counting Time Zones with Pandas123from pandas import DataFrame, Seriesimport pandas as pdframe = DataFrame(records) The output shown for the frame is the summary view, shown for large DataFrame objects. The Series object returned by frame[‘tz’] has a method value_counts that gives us what we’re looking for: 12In [294]: tz_counts = frame[&apos;tz&apos;].value_counts()In [295]: tz_counts[:10] You can do a bit of munging to fill in a substitute value for unknown and missing time zone data in the records. The fillna function can replace missing (NA) values and unknown (empty strings) values can be replaced by boolean array indexing: 123In [296]: clean_tz = frame[&apos;tz&apos;].fillna(&apos;Missing&apos;)In [297]: clean_tz[clean_tz == &apos;&apos;] = &apos;Unknown&apos;In [298]: tz_counts = clean_tz.value_counts() Making a horizontal bar plot can be accomplished using the plot method on the counts objects: 1In [301]: tz_counts[:10].plot(kind=&apos;barh&apos;, rot=0)]]></content>
+      <categories>
+        <category>Notes</category>
+      </categories>
+      <tags>
+        <tag>learning notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[First Blog]]></title>
+    <url>%2F2018%2F01%2F19%2FFirst-Blog%2F</url>
+    <content type="text"><![CDATA[第一篇博客突发奇想建这个博客，起因是…这几天有幸和陈肖哥哥交流，被他的个人网站上的简洁风深深吸引。偶然看到《快速创建自己博客》，也想要自己试试创建自己的网站，于是便在今天（2018.1.19）一边做着朝阳布置的任务，一边照着大神们总结的用 hexo+github 创建blog的帖子们操作，没想到最后真的建起来了这个网站！激动之余也希望能在这里记录下未来一年的生活（买的域名持续一年）和成长轨迹。]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+      <tags>
+        <tag>random</tag>
+      </tags>
+  </entry>
+</search>
