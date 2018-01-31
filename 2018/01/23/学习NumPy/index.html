@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="一开始使用的是Atom text editor+ Python3.6然后在cmd中运行的方式书写，但发现用IPthon更好，可以边写边输出。">
+<meta name="description" content="基础Numpy的用法。。记录一下">
 <meta name="keywords" content="learning notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习NumPy">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/学习NumPy/index.html">
 <meta property="og:site_name" content="One Tiny World">
-<meta property="og:description" content="一开始使用的是Atom text editor+ Python3.6然后在cmd中运行的方式书写，但发现用IPthon更好，可以边写边输出。">
+<meta property="og:description" content="基础Numpy的用法。。记录一下">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-23T10:15:30.241Z">
+<meta property="og:updated_time" content="2018-01-31T07:45:36.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习NumPy">
-<meta name="twitter:description" content="一开始使用的是Atom text editor+ Python3.6然后在cmd中运行的方式书写，但发现用IPthon更好，可以边写边输出。">
+<meta name="twitter:description" content="基础Numpy的用法。。记录一下">
 
 
 
@@ -397,165 +397,8 @@
       
 
       
-        <p>一开始使用的是Atom text editor+ Python3.6然后在cmd中运行的方式书写，但发现用IPthon更好，可以边写边输出。<br><a id="more"></a></p>
-<h1 id="学习NumPy"><a href="#学习NumPy" class="headerlink" title="学习NumPy"></a>学习NumPy</h1><h2 id="Creaeting-ndarrays"><a href="#Creaeting-ndarrays" class="headerlink" title="Creaeting ndarrays"></a>Creaeting ndarrays</h2><p>The easiest way to create an array is to use the <em>array</em> function</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">data1 = [<span class="number">6</span>,<span class="number">7.5</span>,<span class="number">8</span>,<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line">arr1 = np.array(data1)</span><br><span class="line">arr1</span><br></pre></td></tr></table></figure>
-<pre><code>array([ 6. ,  7.5,  8. ,  0. ,  1. ])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data2 =  [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line">arr2 = np.array(data2)</span><br><span class="line">arr2</span><br></pre></td></tr></table></figure>
-<pre><code>array([[1, 2, 3, 4],
-       [5, 6, 7, 8]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2.ndim</span><br></pre></td></tr></table></figure>
-<pre><code>2
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2.shape</span><br></pre></td></tr></table></figure>
-<pre><code>(2, 4)
-</code></pre><p>用<em>empty</em>制造两个随机矩阵（可能为0）<em>It’s not safe to assume that np.empty will return an array of all zeros. In many cases, it will return uninitialized garbage values</em></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.empty((<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<pre><code>array([[[ 0.,  0.],
-        [ 0.,  0.],
-        [ 0.,  0.]],
-
-       [[ 0.,  0.],
-        [ 0.,  0.],
-        [ 0.,  0.]]])
-</code></pre><h3 id="DataTypes-for-ndarrays"><a href="#DataTypes-for-ndarrays" class="headerlink" title="DataTypes for ndarrays"></a>DataTypes for ndarrays</h3><p>The data type or dtype is a special object containing the information the ndarray needs to interpret a chunk of memory as a particular type of data:<br>Dtypes are part of what make NumPy so powerful and flexible. In most cases they map directly onto an underlying machine representation, which makes it easy to read and write binary streams of data to disk and also to connect to code written in a low-level language like C or Fortran. The numerical dtypes are named the same way: a type name, like float or int, followed by a number indicating the number of bits per element. A standard double-precision floating point value (what’s used under the hood in Python’s float object) takes up 8 bytes or 64 bits. Thus, this type is known in NumPy as float64.</p>
-<p>以下是用dtype初始定义ndarray的字段类型，以及用astype重新转换字段类型。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr1 = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], dtype=np.float64)</span><br><span class="line">arr1. dtype</span><br></pre></td></tr></table></figure>
-<pre><code>dtype(&apos;float64&apos;)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr1 = arr1.astype(np.int32)</span><br><span class="line">arr1. dtype</span><br></pre></td></tr></table></figure>
-<pre><code>dtype(&apos;int32&apos;)
-</code></pre><p><em>Calling astype always creates a new array (a copy of the data), even if the new dtype is the same as the old dtype.</em></p>
-<h2 id="Array-的使用"><a href="#Array-的使用" class="headerlink" title="Array 的使用"></a>Array 的使用</h2><p>格式相同的两个arrays可以直接进行运算，which is called <em>vectorization 向量化 </em></p>
-<h3 id="Basic-Indexing-and-Slicing"><a href="#Basic-Indexing-and-Slicing" class="headerlink" title="Basic Indexing and Slicing"></a>Basic Indexing and Slicing</h3><h4 id="one-dimensional-array"><a href="#one-dimensional-array" class="headerlink" title="one-dimensional array"></a>one-dimensional array</h4><p>根据 list 的方式操作，但有点不同：</p>
-<p>An important first distinction from lists is that array slices are views on the original array. This means that the data is not copied, and any modifications to the view will be reflected in the source array:</p>
-<p>具体不理解去书上看下，意思就是用改变新的变量定义的array，原始的array也会改变，不做copying benefits big volumn 的 data processing。要copy的话需要make a copy manually</p>
-<h4 id="two-dimensional-array"><a href="#two-dimensional-array" class="headerlink" title="two-dimensional array"></a>two-dimensional array</h4><p>In a two-dimensional array, the elements at each index are no longer scalars but rather one-dimensional arrays:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr2 = np.array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]])</span><br><span class="line">arr2[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>array([7, 8, 9])
-</code></pre><p>Thus, individual elements can be accessed recursively. But that is a bit too much work, so you can pass a comma-separated list of indices to select individual elements. So these are equivalent:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2[<span class="number">0</span>][<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>3
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2[<span class="number">0</span>,<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>3
-</code></pre><p>muti的去书上看下例子，本质相似</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr2[:<span class="number">2</span>, <span class="number">1</span>:]</span><br><span class="line"><span class="comment">#右边不包括</span></span><br></pre></td></tr></table></figure>
-<pre><code>array([[2, 3],
-       [5, 6]])
-</code></pre><p>When slicing like this, you always obtain array views of the same number of dimensions. By mixing integer indexes and slices, you get lower dimensional slices</p>
-<p>for an illustration. Note that a colon by itself means to take the entire axis, so you can slice only higher dimensional axes by doing:</p>
-<p>且给选择区域赋值，就是全部赋值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr2[:,:<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[1],
-       [4],
-       [7]])
-</code></pre><h4 id="Boolean-array"><a href="#Boolean-array" class="headerlink" title="Boolean array"></a>Boolean array</h4><p>自动匹配，must be of the same length as the axis it’s indexing</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">names = np.array([<span class="string">'Bob'</span>, <span class="string">'Joe'</span>, <span class="string">'Will'</span>, <span class="string">'Bob'</span>, <span class="string">'Will'</span>, <span class="string">'Joe'</span>, <span class="string">'Joe'</span>])</span><br><span class="line">data = np.random.rand(<span class="number">7</span>, <span class="number">4</span>)</span><br><span class="line">data[names == <span class="string">'Bob'</span>]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.9557655 ,  0.22905675,  0.50431088,  0.60829347],
-       [ 0.75815624,  0.50279706,  0.70783685,  0.79516102]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">names != <span class="string">'Bob'</span></span><br></pre></td></tr></table></figure>
-<pre><code>array([False,  True,  True, False,  True,  True,  True], dtype=bool)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data [~(names == <span class="string">'Bob'</span>)]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.42484035,  0.39654515,  0.661522  ,  0.13543556],
-       [ 0.88815595,  0.39119882,  0.31034169,  0.81300137],
-       [ 0.23840864,  0.29161556,  0.5933545 ,  0.82938969],
-       [ 0.65710103,  0.69543904,  0.11611022,  0.52827679],
-       [ 0.19459546,  0.04671212,  0.67820323,  0.22418191]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mask = (names == <span class="string">'Bob'</span>) | (names == <span class="string">'Will'</span>)</span><br><span class="line">mask</span><br></pre></td></tr></table></figure>
-<pre><code>array([ True, False,  True,  True,  True, False, False], dtype=bool)
-</code></pre><p>Selecting data from an array by boolean indexing always creates a copy of the data, even if the returned array is unchanged.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data[data &lt; <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.9557655 ,  0.22905675,  0.50431088,  0.60829347],
-       [ 0.42484035,  0.39654515,  0.661522  ,  0.13543556],
-       [ 0.88815595,  0.39119882,  0.31034169,  0.81300137],
-       [ 0.75815624,  0.50279706,  0.70783685,  0.79516102],
-       [ 0.23840864,  0.29161556,  0.5933545 ,  0.82938969],
-       [ 0.65710103,  0.69543904,  0.11611022,  0.52827679],
-       [ 0.19459546,  0.04671212,  0.67820323,  0.22418191]])
-</code></pre><h4 id="Fancy-indexing"><a href="#Fancy-indexing" class="headerlink" title="Fancy indexing"></a>Fancy indexing</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7</span>):</span><br><span class="line">    data[i] = i</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.,  0.,  0.,  0.],
-       [ 1.,  1.,  1.,  1.],
-       [ 2.,  2.,  2.,  2.],
-       [ 3.,  3.,  3.,  3.],
-       [ 4.,  4.,  4.,  4.],
-       [ 5.,  5.,  5.,  5.],
-       [ 6.,  6.,  6.,  6.]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[[<span class="number">-3</span>, <span class="number">-5</span>, <span class="number">-7</span>]]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 4.,  4.,  4.,  4.],
-       [ 2.,  2.,  2.,  2.],
-       [ 0.,  0.,  0.,  0.]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data = np.arange(<span class="number">32</span>).reshape((<span class="number">8</span>, <span class="number">4</span>))</span><br><span class="line">data</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0,  1,  2,  3],
-       [ 4,  5,  6,  7],
-       [ 8,  9, 10, 11],
-       [12, 13, 14, 15],
-       [16, 17, 18, 19],
-       [20, 21, 22, 23],
-       [24, 25, 26, 27],
-       [28, 29, 30, 31]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[[<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
-<pre><code>array([ 4, 23, 29, 10])
-</code></pre><p>!! reshape 之后详细介绍</p>
-<p>Take a moment to understand what just happened: the elements (1, 0), (5, 3), (7, 1), and (2, 2) were selected. The behavior of fancy indexing in this case is a bit different from what some users might have expected (myself included), which is the rectangular region formed by selecting a subset of the matrix’s rows and columns. Here is one way to get that:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[[<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>]][:,[<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 4,  7,  5,  6],
-       [20, 23, 21, 22],
-       [28, 31, 29, 30],
-       [ 8, 11,  9, 10]])
-</code></pre><p>Another way is to use the np.ix_ function, which converts two 1D integer arrays to an indexer that selects the square region:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data[np.ix_([<span class="number">1</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">2</span>], [<span class="number">0</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>])]</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 4,  7,  5,  6],
-       [20, 23, 21, 22],
-       [28, 31, 29, 30],
-       [ 8, 11,  9, 10]])
-</code></pre><h3 id="Transposing-Arrays-and-Swapping-Axes"><a href="#Transposing-Arrays-and-Swapping-Axes" class="headerlink" title="Transposing Arrays and Swapping Axes"></a>Transposing Arrays and Swapping Axes</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.T</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0,  4,  8, 12, 16, 20, 24, 28],
-       [ 1,  5,  9, 13, 17, 21, 25, 29],
-       [ 2,  6, 10, 14, 18, 22, 26, 30],
-       [ 3,  7, 11, 15, 19, 23, 27, 31]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.dot(data.T, data)</span><br></pre></td></tr></table></figure>
-<pre><code>array([[2240, 2352, 2464, 2576],
-       [2352, 2472, 2592, 2712],
-       [2464, 2592, 2720, 2848],
-       [2576, 2712, 2848, 2984]])
-</code></pre><p>更多的转置再看看，完全忘记。上面那个好像是算一个product什么的</p>
-<h3 id="Universal-Functions"><a href="#Universal-Functions" class="headerlink" title="Universal Functions"></a>Universal Functions</h3><p>就是可以运算矩阵的一些函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">points = np.arange(<span class="number">-5</span>, <span class="number">5</span>, <span class="number">0.01</span>) <span class="comment"># 1000 equally spaced points</span></span><br><span class="line">xs, ys = np.meshgrid(points, points)</span><br><span class="line">z = np.sqrt(xs ** <span class="number">2</span> + ys ** <span class="number">2</span>)</span><br><span class="line">z</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 7.07106781,  7.06400028,  7.05693985, ...,  7.04988652,
-         7.05693985,  7.06400028],
-       [ 7.06400028,  7.05692568,  7.04985815, ...,  7.04279774,
-         7.04985815,  7.05692568],
-       [ 7.05693985,  7.04985815,  7.04278354, ...,  7.03571603,
-         7.04278354,  7.04985815],
-       ...,
-       [ 7.04988652,  7.04279774,  7.03571603, ...,  7.0286414 ,
-         7.03571603,  7.04279774],
-       [ 7.05693985,  7.04985815,  7.04278354, ...,  7.03571603,
-         7.04278354,  7.04985815],
-       [ 7.06400028,  7.05692568,  7.04985815, ...,  7.04279774,
-         7.04985815,  7.05692568]])
-</code></pre><h3 id="Expressing-Conditional-Logic-as-Array-Operations"><a href="#Expressing-Conditional-Logic-as-Array-Operations" class="headerlink" title="Expressing Conditional Logic as Array Operations"></a>Expressing Conditional Logic as Array Operations</h3><p>The numpy.where function is a vectorized version of the ternary expression x if condi tion else y. Suppose we had a boolean array and two arrays of values:(后两项并不是必须为array)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">xarr = np.array([<span class="number">1.1</span>, <span class="number">1.2</span>, <span class="number">1.3</span>, <span class="number">1.4</span>, <span class="number">1.5</span>])</span><br><span class="line">yarr = np.array([<span class="number">2.1</span>, <span class="number">2.2</span>, <span class="number">2.3</span>, <span class="number">2.4</span>, <span class="number">2.5</span>])</span><br><span class="line">cond = np.array([<span class="keyword">True</span>, <span class="keyword">False</span>, <span class="keyword">True</span>, <span class="keyword">True</span>, <span class="keyword">False</span>])</span><br><span class="line">result = np.where(cond, xarr, yarr)</span><br><span class="line">result</span><br></pre></td></tr></table></figure>
-<pre><code>array([ 1.1,  2.2,  1.3,  1.4,  2.5])
-</code></pre><h3 id="Mathematical-and-Statistical-Methods"><a href="#Mathematical-and-Statistical-Methods" class="headerlink" title="Mathematical and Statistical Methods"></a>Mathematical and Statistical Methods</h3><p>A set of mathematical functions which compute statistics about an entire array or about the data along an axis are accessible as array methods. Aggregations (often called reductions) like sum, mean, and standard deviation std can either be used by calling the array instance method or using the top level NumPy functio</p>
-<h3 id="Sort"><a href="#Sort" class="headerlink" title="Sort"></a>Sort</h3><p>method np.sort returns a sorted copy of an array instead of modifying the array in place</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data1 = np.random.rand(<span class="number">4</span>,<span class="number">3</span>)</span><br><span class="line">data1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.12799622,  0.83893776,  0.57784444],
-       [ 0.09005918,  0.73211886,  0.73407077],
-       [ 0.28310393,  0.73966797,  0.88664488],
-       [ 0.38199501,  0.73302471,  0.17547308]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data1[<span class="number">0</span>].sort()</span><br><span class="line">data1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.12799622,  0.57784444,  0.83893776],
-       [ 0.09005918,  0.73211886,  0.73407077],
-       [ 0.28310393,  0.73966797,  0.88664488],
-       [ 0.38199501,  0.73302471,  0.17547308]])
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data1.sort()</span><br><span class="line">data1</span><br></pre></td></tr></table></figure>
-<pre><code>array([[ 0.12799622,  0.57784444,  0.83893776],
-       [ 0.09005918,  0.73211886,  0.73407077],
-       [ 0.28310393,  0.73966797,  0.88664488],
-       [ 0.17547308,  0.38199501,  0.73302471]])
-</code></pre><p>看不下去了以后用到再查吧</p>
-<p>出门去吃半山腰啦哇哈哈哈哈哈哈</p>
-<p>2018.1.23</p>
-<p>明天把剩下的表做完就可以看pandas了吼吼。</p>
+        <p>基础Numpy的用法。。记录一下<br><a id="more"></a></p>
+<iframe src="http://nbviewer.jupyter.org/github/gmmessi/my-blog/blob/master/%E5%AD%A6%E4%B9%A0NumPy.ipynb" width="650" height="600"></iframe>
 
       
     </div>
@@ -662,17 +505,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -691,7 +525,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -752,22 +586,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习NumPy"><span class="nav-number">1.</span> <span class="nav-text">学习NumPy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Creaeting-ndarrays"><span class="nav-number">1.1.</span> <span class="nav-text">Creaeting ndarrays</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DataTypes-for-ndarrays"><span class="nav-number">1.1.1.</span> <span class="nav-text">DataTypes for ndarrays</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-的使用"><span class="nav-number">1.2.</span> <span class="nav-text">Array 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Indexing-and-Slicing"><span class="nav-number">1.2.1.</span> <span class="nav-text">Basic Indexing and Slicing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#one-dimensional-array"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">one-dimensional array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimensional-array"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">two-dimensional array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Boolean-array"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Boolean array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fancy-indexing"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Fancy indexing</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transposing-Arrays-and-Swapping-Axes"><span class="nav-number">1.2.2.</span> <span class="nav-text">Transposing Arrays and Swapping Axes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Universal-Functions"><span class="nav-number">1.2.3.</span> <span class="nav-text">Universal Functions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Expressing-Conditional-Logic-as-Array-Operations"><span class="nav-number">1.2.4.</span> <span class="nav-text">Expressing Conditional Logic as Array Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mathematical-and-Statistical-Methods"><span class="nav-number">1.2.5.</span> <span class="nav-text">Mathematical and Statistical Methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sort"><span class="nav-number">1.2.6.</span> <span class="nav-text">Sort</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
