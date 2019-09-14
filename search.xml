@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[打卡贴]]></title>
-    <url>%2F2018%2F02%2F23%2F%E6%89%93%E5%8D%A1%E8%B4%B4%2F</url>
-    <content type="text"><![CDATA[果然小日子不能过的太舒服，放假后天天在家里宅着想着怎么玩，今天突发奇想去地里看了看这才想起来雾草有这么多东西要补啊（感觉以前只是煞笔的自言自语，现在怎么变成写下自言自语的话了） 2018.2.23今天就先大概梳理一下要做的事情8，不然之后又忘记了 首先比较开心的是这两天把开题报告搞定了，深刻的理解到当初停停说的国外学术研究和国内的巨大差距。像我毕设（dividend policy）应该是属于cooperate finance的一个sub吧，国外那些学者基本从5、60年代就开始研究了而国内的研究也就基本是借鉴人家几十年前的模型套在中国数据里跑跑回归。。。也因为这多种回归方式整的我眼花缭乱，太多计量知识需要补了，之前上的课只是简单接触了下皮毛而已。所以就有些纠结，如果不深度系统补充计量知识其实毕设也能做，不管各种假设限制其实跑下OLS随便解读下即可但感觉这样就水分贼大，这文章写出来也站不住脚吧，只是为了凑数写的了可是要补知识的话，真的会很耗时间。主要是除了计量这方面的东西，真正要理解的话应该要从概率论和Linear Algebra开始。然后就是自己其实是很想不局限在business analyst这个title下的，看一些JD感觉data analyst甚至是data scientist更吸引所以也很想补的一块内容是cs的foundation方面的东西比如Algorithm（这里又有一个纠结就是很多课程都是用java的，但真的不太想碰感觉Python很喜欢了也怕多学一门都不精）补算法就意味着要刷Leetcode（again，关于java的纠结）Data Structure其实是有一定基础的了，但是还是需要加深还有就是Database的东西，SQL应该是必须精通掌握的！所以要补充的知识就是狠狠狠狠狠多啊！现在的小小短期目标就是尽快把毕设写完，然后三月最后实习一个月接下来就开始自己的学习计划8！ 2018.2.24毕设完成情况 今次把模型一建好了，基本上就是Lintner模型的改造啊哈哈哈，感觉经历过大创以后经验变多了应该能省点时间。看到文章里面用two-stage 的什么回归，这些之后再研究吧。。突然想起了自己买的Rice CS课都没上，白白花费49刀= =对了，还想要细致的学学git啊，半懂不懂的感觉十分懵逼]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-      <tags>
-        <tag>learning notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Getting Started with pandas]]></title>
-    <url>%2F2018%2F01%2F31%2Fpandas%2F</url>
-    <content type="text"><![CDATA[一些基础的pandas用法，来自Python for Data Analysis的整理]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>learning notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[丽江]]></title>
     <url>%2F2018%2F01%2F25%2F%E4%B8%BD%E6%B1%9F%2F</url>
     <content type="text"><![CDATA[香格里拉过后，和海狗来到了丽江来过丽江几次，每次都很喜欢。网上有很多关于丽江的负面的新闻，但幸运的是每次去都觉得挺好的哈哈 这次和海狗去的不是大研古镇而是束河古镇，很少，也比较幽静些 就住在这种客栈里，有一条大大的金毛（居然没有图）这里的很多客栈都养大狗狗，每天路上走着就能看到很多，超幸福的 内部装修也很古色古香 他住的房间叫海子，我的叫锅庄哈哈哈哈可能是淡季去的房间也很便宜，印象中是不到一百一间吧~旺季去怕就很贵了 美丽的小院子 到一个喝茶的小店晒晒太阳可以说是懒洋洋的幸福了~ 束河的酒吧没有大研那么多，但也还是有的，酒吧街就很热闹 晚上的束河很寂静 莫名害怕哈哈哈 我记得我们还去了白马古镇，居然没有照片！总的来说香格里拉和丽江我都很喜欢！愉快的记忆~]]></content>
@@ -59,17 +37,6 @@
     <title><![CDATA[学习NumPy]]></title>
     <url>%2F2018%2F01%2F23%2F%E5%AD%A6%E4%B9%A0NumPy%2F</url>
     <content type="text"><![CDATA[基础Numpy的用法。。记录一下]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>learning notes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Python Example]]></title>
-    <url>%2F2018%2F01%2F19%2FPython-Study-Note-1%2F</url>
-    <content type="text"><![CDATA[学习笔记来自《Python for Data Analysis》 An example of using Python standard library &amp; pandas123456789101112import jsonfrom collections import defaultdict#count the appearance of time zonedef get_counts2(sequence): counts = defaultdict(int) # values will initialize to 0 for x in sequence: counts[x] += 1return countspath = &apos;ch02/usagov_bitly_data2012-03-16-1331923249.txt&apos;records = [json.loads(line) for line in open(path)] List Comprehension: a concise way of applying an operation (like json.loads) to a collection of strings or other objects. Counting Time Zones with Python standard library1234567In [19]: records[0]Out[19]: u&apos;America/New_YorkIn [31]: counts = get_counts(time_zones)In [32]: counts[&apos;America/New_York&apos;]Out[32]: 1251In [33]: len(time_zones)Out[33]: 3440 1234def top_counts(count_dict, n=10): value_key_pairs = [(count, tz) for tz, count in count_dict.items()] value_key_pairs.sort() return value_key_pairs[-n:] 12In [35]: top_counts(counts)Out[35]: [(33, u&apos;America/Sao_Paulo&apos;), (35, u&apos;Europe/Madrid&apos;), (36, u&apos;Pacific/Honolulu&apos;), (37, u&apos;Asia/Tokyo&apos;), (74, u&apos;Europe/London&apos;), (191, u&apos;America/Denver&apos;), (382, u&apos;America/Los_Angeles&apos;), (400, u&apos;America/Chicago&apos;), (521, u&apos;&apos;), (1251, u&apos;America/New_York&apos;)] If you search the Python standard library, you may find the collections.Counter class, which makes this task a lot easier: 12 from collections import Counter counts = Counter(time_zones)counts.most_common(10) Counting Time Zones with Pandas123from pandas import DataFrame, Seriesimport pandas as pdframe = DataFrame(records) The output shown for the frame is the summary view, shown for large DataFrame objects. The Series object returned by frame[‘tz’] has a method value_counts that gives us what we’re looking for: 12In [294]: tz_counts = frame[&apos;tz&apos;].value_counts()In [295]: tz_counts[:10] You can do a bit of munging to fill in a substitute value for unknown and missing time zone data in the records. The fillna function can replace missing (NA) values and unknown (empty strings) values can be replaced by boolean array indexing: 123In [296]: clean_tz = frame[&apos;tz&apos;].fillna(&apos;Missing&apos;)In [297]: clean_tz[clean_tz == &apos;&apos;] = &apos;Unknown&apos;In [298]: tz_counts = clean_tz.value_counts() Making a horizontal bar plot can be accomplished using the plot method on the counts objects: 1In [301]: tz_counts[:10].plot(kind=&apos;barh&apos;, rot=0)]]></content>
       <categories>
         <category>Notes</category>
       </categories>
