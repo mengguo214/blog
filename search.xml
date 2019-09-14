@@ -34,17 +34,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[学习NumPy]]></title>
-    <url>%2F2018%2F01%2F23%2F%E5%AD%A6%E4%B9%A0NumPy%2F</url>
-    <content type="text"><![CDATA[基础Numpy的用法。。记录一下]]></content>
-      <categories>
-        <category>Notes</category>
-      </categories>
-      <tags>
-        <tag>learning notes</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[First Blog]]></title>
     <url>%2F2018%2F01%2F19%2FFirst-Blog%2F</url>
     <content type="text"><![CDATA[第一篇博客突发奇想建这个博客，起因是…这几天有幸和陈肖哥哥交流，被他的个人网站上的简洁风深深吸引。偶然看到《快速创建自己博客》，也想要自己试试创建自己的网站，于是便在今天（2018.1.19）一边做着朝阳布置的任务，一边照着大神们总结的用 hexo+github 创建blog的帖子们操作，没想到最后真的建起来了这个网站！激动之余也希望能在这里记录下未来一年的生活（买的域名持续一年）和成长轨迹。]]></content>
