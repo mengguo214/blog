@@ -9,7 +9,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next muse use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="游纪," />
+  <meta name="keywords" content="游纪Travel," />
 
 
 
@@ -83,12 +83,12 @@
 
 
 
-<meta name="keywords" content="游纪">
+<meta name="keywords" content="游纪Travel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="香格里拉">
 <meta property="og:url" content="http://yoursite.com/2018/01/25/香格里拉/index.html">
 <meta property="og:site_name" content="One Tiny World">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/4.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/2.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/1.jpg">
@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/6.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/11.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/01/25/香格里拉/16.jpg">
-<meta property="og:updated_time" content="2018-01-25T21:32:56.000Z">
+<meta property="og:updated_time" content="2019-09-15T22:01:09.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="香格里拉">
 <meta name="twitter:image" content="http://yoursite.com/2018/01/25/香格里拉/4.jpg">
@@ -114,13 +114,13 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -152,7 +152,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -207,17 +207,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
         
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-about-me">
           <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            关于GM
+            about me
           </a>
         </li>
       
@@ -227,7 +227,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -237,7 +237,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
-            文章分类
+            Categories
           </a>
         </li>
       
@@ -247,7 +247,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -260,7 +260,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
-            搜索
+            Search
           </a>
         </li>
       
@@ -280,7 +280,7 @@
     </span>
     <div class="local-search-input-wrapper">
       <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
+             placeholder="Searching..." spellcheck="false"
              type="text" id="local-search-input">
     </div>
   </div>
@@ -345,9 +345,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T16:16:03-06:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-25T16:16:03-06:00">
                 2018-01-25
               </time>
             
@@ -366,7 +366,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -449,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/游纪/" rel="tag"><i class="fa fa-tag"></i> 游纪</a>
+            <a href="/tags/游纪Travel/" rel="tag"><i class="fa fa-tag"></i> 游纪Travel</a>
           
         </div>
       
@@ -521,6 +521,8 @@
 
   <aside id="sidebar" class="sidebar">
     
+      <div id="sidebar-dimmer"></div>
+    
     <div class="sidebar-inner">
 
       
@@ -546,8 +548,8 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -558,7 +560,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -569,7 +571,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -582,13 +584,13 @@
             <div class="links-of-author motion-element">
                 
                   <span class="links-of-author-item">
-                    <a href="https://github.com/gmmessi" target="_blank" title="GitHub">
+                    <a href="https://github.com/mengguo214" target="_blank" title="GitHub">
                       
                         <i class="fa fa-fw fa-github"></i></a>
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://linkedin.com/in/meng-guo-17a14313a" target="_blank" title="Linkedin">
+                    <a href="https://www.linkedin.com/in/meng-guo/" target="_blank" title="Linkedin">
                       
                         <i class="fa fa-fw fa-linkedin"></i></a>
                   </span>
@@ -631,7 +633,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -639,7 +641,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
 
 
 
